@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { USERS } from './usersData';
+import { User } from './user/user';
 
 @Component({
   selector: 'app-users-list',
-  imports: [],
+  imports: [User],
   templateUrl: './users-list.html',
-  styleUrl: './users-list.css'
+  styleUrl: './users-list.css',
 })
-export class UsersList {
-
-}
+export class UsersList {}

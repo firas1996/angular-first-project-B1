@@ -1,26 +1,26 @@
 export const USERS = [
   {
-    id: 1,
+    id: 'u1',
     name: 'John Doe',
     avatar: 'https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png',
   },
   {
-    id: 2,
+    id: 'u2',
     name: 'Jane Smith',
     avatar: 'https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png',
   },
   {
-    id: 3,
+    id: 'u3',
     name: 'Alice Johnson',
     avatar: 'https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png',
   },
   {
-    id: 4,
+    id: 'u4',
     name: 'Bob Brown',
     avatar: 'https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png',
   },
   {
-    id: 5,
+    id: 'u5',
     name: 'Charlie Davis',
     avatar: 'https://icons.veryicon.com/png/o/miscellaneous/user-avatar/user-avatar-male-5.png',
   },

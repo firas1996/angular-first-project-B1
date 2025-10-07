@@ -1,0 +1,25 @@
+div {
+    width: 85%;
+    background-color: purple;
+    padding: 8px;
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+div:hover {
+    background-color: rgb(73, 6, 101);
+}
+
+img {
+    width: 48px;
+    height: 48px;
+}
+
+span {
+    color: white;
+    font-weight: bold;
+    margin-left: 12px;
+}
