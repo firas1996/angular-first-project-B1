@@ -9,7 +9,7 @@ div {
     cursor: pointer;
 }
 
-div:hover {
+div:hover, .active {
     background-color: rgb(73, 6, 101);
 }
 

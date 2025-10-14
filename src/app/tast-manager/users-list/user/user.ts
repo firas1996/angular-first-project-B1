@@ -19,6 +19,7 @@ export class User {
   // avatar = input.required<string>();
   user = input.required<UserType>();
   select = output<string>();
+  selected = input.required<boolean>();
   // avatarPath = computed(() => '/users/' + this.avatar());
   avatarPath = computed(() => '/users/' + this.user().avatar);
   onSelectUser() {

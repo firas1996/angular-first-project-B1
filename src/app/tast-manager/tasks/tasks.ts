@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-tasks',
   imports: [],
   templateUrl: './tasks.html',
-  styleUrl: './tasks.css'
+  styleUrl: './tasks.css',
 })
 export class Tasks {
-
+  userName = input<string>();
 }
