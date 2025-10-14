@@ -1,4 +1,4 @@
-import { Component, computed, input, Input } from '@angular/core';
+import { Component, computed, input, Input, output } from '@angular/core';
 
 interface UserType {
   id: string;
@@ -18,6 +18,11 @@ export class User {
   // name = input.required<string>();
   // avatar = input.required<string>();
   user = input.required<UserType>();
+  select = output<string>();
   // avatarPath = computed(() => '/users/' + this.avatar());
   avatarPath = computed(() => '/users/' + this.user().avatar);
+  onSelectUser() {
+    this.select.emit(this.user().id);
+    console.log(this.user().id);
+  }
 }

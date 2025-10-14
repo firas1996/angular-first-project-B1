@@ -1,7 +1,7 @@
 <div>
     @for(user of users;track user.id){
         <!-- <app-user [id]="user.id" [name]="user.name" [avatar]="user.avatar" /> -->
-        <app-user [user]="user" />
+        <app-user [user]="user" (select)="getSelectedUserId($event)"  />
     }
     <!-- <app-user [id]="users[0].id" [name]="users[0].name" [avatar]="users[0].avatar" />
     <app-user [id]="users[1].id" [name]="users[1].name" [avatar]="users[1].avatar"/>
@@ -9,3 +9,4 @@
     <app-user [id]="users[3].id" [name]="users[3].name" [avatar]="users[3].avatar"/>
     <app-user [id]="users[4].id" [name]="users[4].name" [avatar]="users[4].avatar"/> -->
 </div>
+<app-tasks/>
