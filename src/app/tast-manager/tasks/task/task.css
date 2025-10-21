@@ -1,0 +1,26 @@
+div{
+    background-color: rgb(130, 44, 195);
+    padding: 1rem;
+    color: white;
+    border-radius: 12px;
+    margin: 8px 0;
+}
+h2{
+    margin: 0;
+    font-size: 28px;
+}
+time{
+    font-size: 18px;
+}
+p{
+    margin: 8px 0;
+}
+button{
+    float: right;
+    cursor: pointer;
+    background-color: rgb(35, 2, 67);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 12px;
+}

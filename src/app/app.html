@@ -9,4 +9,4 @@
     <app-user [id]="users[3].id" [name]="users[3].name" [avatar]="users[3].avatar"/>
     <app-user [id]="users[4].id" [name]="users[4].name" [avatar]="users[4].avatar"/> -->
 </div>
-<app-tasks [userName]="selectedUser() ? selectedUser()!.name : 'Plz select a user' " />
+<app-tasks [userId]="selectedUserId()!" [userName]="selectedUser() ? selectedUser()!.name : 'Plz select a user' " />
