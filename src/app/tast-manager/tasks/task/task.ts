@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, Input, input, output } from '@angular/core';
 import { type TheTask } from '../task.model';
 
 @Component({
