@@ -2,5 +2,5 @@
     <h2>{{task().title}}</h2>
     <p>{{task().description}}</p>
     <time>{{task().deadline}}</time>
-    <button>Complete</button>
+    <button (click)="onComplete()" >Complete</button>
 </div>

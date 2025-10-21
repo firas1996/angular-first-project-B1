@@ -2,6 +2,6 @@
     <p>{{userName()}}</p>
 
     @for(task of selectedUserTasks ; track task.id){
-        <app-task [task]="task" />
+        <app-task [task]="task" (taskCompleted)="onTaskCompleted($event)" />
     }
 </section>
