@@ -1,5 +1,7 @@
+<app-add-task/>
 <section id="tasks">
     <p>{{userName()}}</p>
+    <button>Add Task</button>
 
     @for(task of selectedUserTasks ; track task.id){
         <app-task [task]="task" (taskCompleted)="onTaskCompleted($event)" />
