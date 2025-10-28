@@ -9,8 +9,8 @@ import { AddTask } from './add-task/add-task';
   styleUrl: './tasks.css',
 })
 export class Tasks {
+  isAddingTask = false;
   userName = input<string>();
-
   userId = input<string>();
 
   tasksData = [
@@ -65,5 +65,14 @@ export class Tasks {
   }
   onTaskCompleted(id: number) {
     this.tasksData = this.tasksData.filter((task) => task.id != id);
+  }
+  onAddingTask() {
+    this.isAddingTask = !this.isAddingTask;
+  }
+  onOpenAddingTask() {
+    this.isAddingTask = true;
+  }
+  onCloseAddingTask() {
+    this.isAddingTask = false;
   }
 }

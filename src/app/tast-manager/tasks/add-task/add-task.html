@@ -1,4 +1,4 @@
-<div class="backdrop"></div>
+<div (click)="onClose()" class="backdrop"></div>
 <dialog open>
     <h2>Add New Task</h2>
     <form>
@@ -14,8 +14,8 @@
             <label>Title</label>
             <input type="date" id="deadline" name="deadline" />
         </div>
-        <div>
-            <button type="button">Cancel</button>
+        <div class="actions">
+            <button (click)="onClose()" type="button">Cancel</button>
             <button type="submit">Create</button>
         </div>
     </form>

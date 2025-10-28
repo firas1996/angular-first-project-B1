@@ -1,7 +1,9 @@
-<app-add-task/>
+@if(isAddingTask){
+    <app-add-task (handelForm)="onAddingTask()" />
+}
 <section id="tasks">
     <p>{{userName()}}</p>
-    <button>Add Task</button>
+    <button (click)="onAddingTask()">Add Task</button>
 
     @for(task of selectedUserTasks ; track task.id){
         <app-task [task]="task" (taskCompleted)="onTaskCompleted($event)" />
