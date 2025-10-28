@@ -1,18 +1,18 @@
 <div (click)="onClose()" class="backdrop"></div>
 <dialog open>
     <h2>Add New Task</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
         <div>
             <label>Title</label>
-            <input type="text" id="title" name="title" />
+            <input type="text" id="title" name="title" [(ngModel)]="taskData.title" />
         </div>
         <div>
             <label>Description</label>
-            <textarea id="description" name="description"></textarea>
+            <textarea id="description" name="description" [(ngModel)]="taskData.description"></textarea>
         </div>
         <div>
             <label>Title</label>
-            <input type="date" id="deadline" name="deadline" />
+            <input type="date" id="deadline" name="deadline" [(ngModel)]="taskData.deadline" />
         </div>
         <div class="actions">
             <button (click)="onClose()" type="button">Cancel</button>

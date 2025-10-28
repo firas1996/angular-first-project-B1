@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { Task } from './task/task';
 import { AddTask } from './add-task/add-task';
+import { TaskData } from './task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -11,7 +12,7 @@ import { AddTask } from './add-task/add-task';
 export class Tasks {
   isAddingTask = false;
   userName = input<string>();
-  userId = input<string>();
+  userId = input.required<string>();
 
   tasksData = [
     {
@@ -74,5 +75,12 @@ export class Tasks {
   }
   onCloseAddingTask() {
     this.isAddingTask = false;
+  }
+  onTaskCreated(taskData: TaskData) {
+    this.tasksData.push({
+      id: Date.now(),
+      userId: this.userId(),
+      ...taskData,
+    });
   }
 }
