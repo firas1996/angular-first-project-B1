@@ -1,5 +1,6 @@
-import { Component, Input, input, output } from '@angular/core';
+import { Component, inject, Input, input, output } from '@angular/core';
 import { type TheTask } from '../task.model';
+import { TasksService } from '../../../../services/tasks.service';
 
 @Component({
   selector: 'app-task',
@@ -9,9 +10,11 @@ import { type TheTask } from '../task.model';
 })
 export class Task {
   task = input.required<TheTask>();
-  taskCompleted = output<number>();
+  // taskCompleted = output<number>();
+  private tasksService = inject(TasksService);
 
   onComplete() {
-    this.taskCompleted.emit(this.task().id);
+    // this.taskCompleted.emit(this.task().id);
+    this.tasksService.removeTask(this.task().id);
   }
 }

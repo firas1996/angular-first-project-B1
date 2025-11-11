@@ -16,7 +16,6 @@ export class Tasks {
   userId = input.required<string>();
   private tasksService = inject(TasksService);
 
-  onTaskCompleted(id: number) {}
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId());
   }

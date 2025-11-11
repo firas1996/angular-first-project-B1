@@ -47,15 +47,28 @@ export class TasksService {
       deadline: 'Feb 21th at 8:30am',
     },
   ];
+
+  constructor() {
+    const storedData = localStorage.getItem('tasks');
+    if (storedData) {
+      this.tasksData = JSON.parse(storedData);
+    }
+  }
+  saveData() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasksData));
+  }
+
   addTask(taskData: TaskData, id: string) {
     this.tasksData.push({
       id: Date.now(),
       userId: id,
       ...taskData,
     });
+    this.saveData();
   }
   removeTask(id: number) {
     this.tasksData = this.tasksData.filter((task) => task.id != id);
+    this.saveData();
   }
 
   getUserTasks(id: string) {
