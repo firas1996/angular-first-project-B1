@@ -1,6 +1,7 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TaskData } from '../task.model';
+import { TasksService } from '../../../../services/tasks.service';
 
 @Component({
   selector: 'app-add-task',
@@ -9,6 +10,10 @@ import { TaskData } from '../task.model';
   styleUrl: './add-task.css',
 })
 export class AddTask {
+  // private tasksService = new TasksService(); do not use this one
+  // constructor(private tasksService: TasksService) {}
+  private tasksService = inject(TasksService);
+  userId = input.required<string>();
   handelForm = output<void>();
   // enteredTitle = '';
   // enteredDescription = '';
@@ -18,7 +23,7 @@ export class AddTask {
     description: '',
     deadline: '',
   };
-  newTaskData = output<TaskData>();
+  // newTaskData = output<TaskData>();
   onClose() {
     this.handelForm.emit();
   }
@@ -29,7 +34,8 @@ export class AddTask {
       this.taskData.description != '' &&
       this.taskData.deadline != ''
     ) {
-      this.newTaskData.emit(this.taskData);
+      // this.newTaskData.emit(this.taskData);
+      this.tasksService.addTask(this.taskData, this.userId());
       this.taskData = {
         title: '',
         description: '',

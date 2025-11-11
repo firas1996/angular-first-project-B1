@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Task } from './task/task';
 import { AddTask } from './add-task/add-task';
 import { TaskData } from './task.model';
+import { TasksService } from '../../../services/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -13,59 +14,11 @@ export class Tasks {
   isAddingTask = false;
   userName = input<string>();
   userId = input.required<string>();
+  private tasksService = inject(TasksService);
 
-  tasksData = [
-    {
-      id: 1,
-      userId: 'u3',
-      title: 'Task1',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-    {
-      id: 2,
-      userId: 'u1',
-      title: 'Task2',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-    {
-      id: 3,
-      userId: 'u5',
-      title: 'Task3',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-    {
-      id: 4,
-      userId: 'u2',
-      title: 'Task4',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-    {
-      id: 5,
-      userId: 'u2',
-      title: 'Task5',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-    {
-      id: 6,
-      userId: 'u3',
-      title: 'Task6',
-      description: 'this is a task description',
-      deadline: 'Feb 21th at 8:30am',
-    },
-  ];
-
+  onTaskCompleted(id: number) {}
   get selectedUserTasks() {
-    return this.tasksData.filter((task) => {
-      return task.userId === this.userId();
-    });
-  }
-  onTaskCompleted(id: number) {
-    this.tasksData = this.tasksData.filter((task) => task.id != id);
+    return this.tasksService.getUserTasks(this.userId());
   }
   onAddingTask() {
     this.isAddingTask = !this.isAddingTask;
@@ -75,12 +28,5 @@ export class Tasks {
   }
   onCloseAddingTask() {
     this.isAddingTask = false;
-  }
-  onTaskCreated(taskData: TaskData) {
-    this.tasksData.push({
-      id: Date.now(),
-      userId: this.userId(),
-      ...taskData,
-    });
   }
 }

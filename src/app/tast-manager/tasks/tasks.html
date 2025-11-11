@@ -1,5 +1,5 @@
 @if(isAddingTask){
-<app-add-task (handelForm)="onAddingTask()" (newTaskData)="onTaskCreated($event)" />
+<app-add-task (handelForm)="onAddingTask()" [userId]="userId()" />
 }
 <section id="tasks">
     <p>{{userName()}}</p>
